@@ -16,9 +16,9 @@ function closeabout(){
 function showproject(){
     $("#project_container").css("display","inherit");
     $("#project_container").css("width","80vh");
-    $("#project_container").addClass("animated slideInRight");
+    $("#project_container").addClass("animated slideInLeft");
     setTimeout(function(){
-        $("#project_container").removeClass("animated slideInRight");
+        $("#project_container").removeClass("animated slideInLeft
     },800);
 }
 function closeproject(){
@@ -31,9 +31,9 @@ function closeproject(){
 function showcontact(){
     $("#contact_container").css("display","inherit");
     $("#contact_container").css("width","80vh");
-    $("#contact_container").addClass("animated slideInRight");
+    $("#contact_container").addClass("animated slideInLeft
     setTimeout(function(){
-        $("#contact_container").removeClass("animated slideInRight");
+        $("#contact_container").removeClass("animated slideInLeft
     },800);
 }
 function closecontact(){
