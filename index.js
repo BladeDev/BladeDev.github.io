@@ -31,9 +31,9 @@ function closeproject(){
 function showcontact(){
     $("#contact_container").css("display","inherit");
     $("#contact_container").css("width","80vh");
-    $("#contact_container").addClass("animated slideInLeft
+    $("#contact_container").addClass("animated slideInLeft");
     setTimeout(function(){
-        $("#contact_container").removeClass("animated slideInLeft
+        $("#contact_container").removeClass("animated slideInLeft");
     },800);
 }
 function closecontact(){
