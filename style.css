@@ -297,6 +297,9 @@ body {
         width:90vw;
         padding:0px 5vw;
     }
+    #middle h1{
+	    width: 80vw;
+	}
     #middle table {
         width:80%;
     }
