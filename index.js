@@ -18,7 +18,7 @@ function showproject(){
     $("#project_container").css("width","80vh");
     $("#project_container").addClass("animated slideInLeft");
     setTimeout(function(){
-        $("#project_container").removeClass("animated slideInLeft
+        $("#project_container").removeClass("animated slideInLeft");
     },800);
 }
 function closeproject(){
