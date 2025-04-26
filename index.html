@@ -56,6 +56,7 @@
         
         section {
             padding: 60px 0;
+            scroll-margin-top: 20px;
         }
         
         /* Header */
@@ -331,6 +332,14 @@
             margin-top: 20px;
             font-size: 14px;
         }
+        .filter{
+        background: #000000;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0.6;
+        height: 90vh;
+        }
         
         /* Media Queries */
         @media (max-width: 768px) {
@@ -369,14 +378,7 @@
     </header>
 
     <section class="hero" id="home">
-        <div style="
-    background: #000000;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0.6;
-    height: 90vh;
-"></div>
+        <div class="filter"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Corpul tău merită asta.</h1>
@@ -479,13 +481,14 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Contact</h2>
+            
             
             <!-- Notification area for form submission feedback -->
             <div id="notification-area"></div>
             
             <div class="contact-content">
                 <div class="contact-info">
+                    <h2>Contact</h2>
                     <h3>Adresa</h3>
                     <p>123 Relaxation Avenue<br>Wellness City, WC 10001</p>
                     
