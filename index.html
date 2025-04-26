@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,6 +111,64 @@
             color: #7d9d9c;
         }
         
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #45626c;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #e0e0e0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 20px 0;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu li {
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .mobile-menu li:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-menu a {
+            color: #45626c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: #7d9d9c;
+        }
+        
         /* Hero Section */
         .hero {
             height: 90vh;
@@ -118,14 +176,12 @@
             background-repeat: no-repeat;
             /* background-attachment: fixed; */
             background-position: center;
-            background-size: auto;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
             margin-top: 60px;
             background-size: cover;
-            background-repeat: no-repeat;
         }
         
         .hero-content {
@@ -312,74 +368,74 @@
             font-size: 14px;
         }
         .filter{
-        background: #000000;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        opacity: 0.6;
-        height: 90vh;
+            background: #000000;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0.6;
+            height: 90vh;
         }
 
         .footer-logo {
-        font-size: 22px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        color: #f8f5f2;
-        padding-bottom: 5px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-        display: inline-block;
-        margin-bottom: 10px;
-    }
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #f8f5f2;
+            padding-bottom: 5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
 
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    /* Keep the existing social links styling */
-    .social-links {
-        display: flex;
-        list-style: none;
-        gap: 20px;
-        justify-content: center;
-    }
-    
-    .social-links li {
-        display: inline-block;
-    }
-    
-    .social-links a {
-        color: white;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-    
-    .social-links a:hover {
-        background-color: #7d9d9c;
-        transform: translateY(-3px);
-    }
-    
-    .social-links .fa {
-        font-size: 22px;
-        padding: 0;
-        width: auto;
-    }
-    
-    .copyright {
-        margin-top: 10px;
-        font-size: 14px;
-        opacity: 0.8;
-    }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Keep the existing social links styling */
+        .social-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .social-links li {
+            display: inline-block;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #7d9d9c;
+            transform: translateY(-3px);
+        }
+        
+        .social-links .fa {
+            font-size: 22px;
+            padding: 0;
+            width: auto;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
         /* Media Queries */
         @media (max-width: 768px) {
             .about-content {
@@ -397,6 +453,10 @@
             .nav-links {
                 display: none;
             }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -411,9 +471,21 @@
                     <li><a href="#services">Servicii</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="mobile-menu-btn" aria-label="Meniu">
+                    <i class="fa fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#home">Acasa</a></li>
+            <li><a href="#about">Despre</a></li>
+            <li><a href="#services">Servicii</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <section class="hero" id="home">
         <div class="filter"></div>
@@ -451,17 +523,15 @@
                 <div class="service-card">
                     <h3>Masaj Suedez</h3>
                     <p>Masaj bland si relaxant care imbunatateste circulatia si reduce tensiunea prin miscari line si fluide.</p>
-                    <div class="price">$75 / 60 min</div>
-                    <a href="#contact" class="btn" onclick="setService('Masaj Suedez')">Book Now</a>
+                    <div class="price">150 lei / 60 min</div>
+                    <a href="#contact" class="btn" onclick="setService('Masaj Suedez')">Rezerva acum</a>
                 </div>
                 
                 <div class="service-card">
                     <h3>In curand</h3>
                     <p>Pregatim si alte pachete de servicii.</p>
                     <div class="price">Pret</div>
-                    <a href="#" class="btn" onclick="setService('#')">Book Now</a>
-                </div>
-                
+                    <button class="btn" disabled>În curând</button>
                 </div>
             </div>
         </div>
@@ -469,7 +539,6 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            
             
             <!-- Notification area for form submission feedback -->
             <div id="notification-area"></div>
@@ -504,15 +573,15 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="Telefon">Telefon *</label>
-                            <input type="tel" id="Telefon" name="Telefon" required>
+                            <label for="telefon">Telefon *</label>
+                            <input type="tel" id="telefon" name="telefon" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="service">Tip de masaj *</label>
                             <select id="service" name="service" required>
                                 <option value="">Alege un serviciu</option>
-                                <option value="Masaj Suedez">Masaj Suedez - $75 / 60 min</option>
+                                <option value="Masaj Suedez">Masaj Suedez - 150 lei / 60 min</option>
                                 <!-- <option value="Masaj țesut profund">Masaj țesut profund - $90 / 60 min</option>
                                 <option value="Terapie cu pietre calde">Terapie cu pietre calde - $110 / 75 min</option>
                                 <option value="Aromaterapie Masaj">Aromaterapie Masaj - $85 / 60 min</option>
@@ -543,8 +612,7 @@
         </div>
     </section>
     
-
-    <<footer>
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">Geanina Masaj</div>
@@ -559,7 +627,6 @@
         </div>
     </footer>
     
-
     <script>
         // Function to handle URL parameters for form submission feedback
         function getUrlParameter(name) {
@@ -575,10 +642,10 @@
             const messageArea = document.getElementById('notification-area');
             
             if (bookingStatus === 'success') {
-                messageArea.innerHTML = '<div class="notification success">Thank you for your booking request! We will contact you shortly to confirm your appointment.</div>';
+                messageArea.innerHTML = '<div class="notification success">Vă mulțumim pentru cererea dvs. de rezervare! Vă vom contacta în scurt timp pentru a vă confirma programarea.</div>';
             } else if (bookingStatus === 'error') {
                 const errorMessage = getUrlParameter('message');
-                messageArea.innerHTML = '<div class="notification error">' + (errorMessage || 'There was an error processing your booking. Please try again.') + '</div>';
+                messageArea.innerHTML = '<div class="notification error">' + (errorMessage || 'A apărut o eroare în procesarea rezervării dvs. Vă rugăm să încercați din nou.') + '</div>';
             }
             
             // Set minimum date to today for the date picker
@@ -586,7 +653,7 @@
             document.getElementById('date').min = today;
         });
         
-        // Function to pre-select service when "Book Now" is clicked
+        // Function to pre-select service when "Rezerva acum" is clicked
         function setService(serviceName) {
             const serviceSelect = document.getElementById('service');
             for (let i = 0; i < serviceSelect.options.length; i++) {
@@ -596,6 +663,37 @@
                 }
             }
         }
+
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                
+                // Change icon between hamburger and close
+                const icon = menuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
     </script>
 </body>
 </html>
