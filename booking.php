@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Simple validation
     if (empty($name) || empty($email) || empty($phone) || empty($service) || empty($date) || empty($time)) {
-        $response['message'] = "Please fill in all required fields.";
+        $response['message'] = "Vă rugăm să completați toate câmpurile obligatorii.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $response['message'] = "Please enter a valid email address.";
+        $response['message'] = "Vă rugăm să introduceți o adresă de e-mail validă.";
     } else {
         // Format the booking data
         $booking_id = uniqid();
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($file_result !== false) {
             $response['success'] = true;
-            $response['message'] = "Thank you for your booking request! We will contact you shortly to confirm your appointment.";
+            $response['message'] = "Vă mulțumim pentru cererea dvs. de rezervare! Vă vom contacta în scurt timp pentru a vă confirma programarea.";
             
             // Optional: Send email notification
             // $to = "salon@example.com";
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // $headers = "From: booking@yoursalon.com";
             // mail($to, $subject, $email_message, $headers);
         } else {
-            $response['message'] = "Sorry, there was an error processing your booking. Please try again or contact us directly.";
+            $response['message'] = "Ne pare rău, a apărut o eroare în procesarea rezervării dvs. Vă rugăm să încercați din nou sau să ne contactați direct.";
         }
     }
 }
