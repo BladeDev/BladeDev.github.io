@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geanina Masaj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         /* Global Styles */
         * {
@@ -25,6 +26,7 @@
             margin: 0 auto;
             padding: 0 20px;
             z-index: 99;
+            position: relative;
         }
         
         h1, h2, h3 {
@@ -68,6 +70,13 @@
             width: 100%;
             z-index: 1000;
             top: 0;
+            left: 0;
+        }
+        .hero .filter {
+            z-index: 5;
+        }
+        section:first-of-type {
+            margin-top: 60px;
         }
         
         nav {
@@ -198,37 +207,7 @@
             font-weight: 600;
             margin: 15px 0;
         }
-        
-        /* Testimonials */
-        /* .testimonials {
-            background-color: white;
-            text-align: center;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .testimonial-card {
-            background-color: #f8f5f2;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: #45626c;
-        } */
-        
+
         /* Contact Section */
         .contact {
             background-color: #f0f0f0;
@@ -340,7 +319,67 @@
         opacity: 0.6;
         height: 90vh;
         }
-        
+
+        .footer-logo {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #f8f5f2;
+        padding-bottom: 5px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    /* Keep the existing social links styling */
+    .social-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .social-links li {
+        display: inline-block;
+    }
+    
+    .social-links a {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background-color: #7d9d9c;
+        transform: translateY(-3px);
+    }
+    
+    .social-links .fa {
+        font-size: 22px;
+        padding: 0;
+        width: auto;
+    }
+    
+    .copyright {
+        margin-top: 10px;
+        font-size: 14px;
+        opacity: 0.8;
+    }
         /* Media Queries */
         @media (max-width: 768px) {
             .about-content {
@@ -442,7 +481,7 @@
                     <p>Calarasi, Dragos-Voda<br>str. idkidk nr. 14</p>
                     
                     <h3>Program</h3>
-                    <p>Luni - Viner: 09:00 - 20:00<br>
+                    <p>Luni - Vineri: 09:00 - 20:00<br>
                     Sambata: 10:00 - 18:00<br>
                     Duminica: Inchis</p>
                     
@@ -503,22 +542,23 @@
             </div>
         </div>
     </section>
+    
 
-    <footer>
+    <<footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">Geanina Masaj</div>
                 <ul class="social-links">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
                 </ul>
                 <div class="copyright">
-                    &copy; 2025 Voinea Marius. Toate Drepturile Rezervate.
+                    &copy; 2025 Marius Voinea. Toate Drepturile Rezervate.
                 </div>
             </div>
         </div>
     </footer>
+    
 
     <script>
         // Function to handle URL parameters for form submission feedback
